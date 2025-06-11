@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import API from '../api/api';
 import { Link } from 'react-router-dom';
+import './ContractsList.css'; // Import the CSS file
 
 const ContractsList = () => {
   const [contracts, setContracts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchContracts = async () => {
@@ -13,6 +15,7 @@ const ContractsList = () => {
         setContracts(res.data);
       } catch (err) {
         console.error('Error fetching contracts:', err);
+        setError('Failed to fetch contracts. Please try again later.');
       } finally {
         setLoading(false);
       }
@@ -21,14 +24,15 @@ const ContractsList = () => {
   }, []);
 
   if (loading) return <p>Loading contracts...</p>;
+  if (error) return <p>{error}</p>;
 
   return (
-    <div>
+    <div className="contracts-container">
       <h3>Contracts</h3>
       <Link to="/dashboard/contracts/new">
-        <button>Add New Contract</button>
+        <button className="add-btn">Add New Contract</button>
       </Link>
-      <table border="1" cellPadding="5">
+      <table className="contracts-table">
         <thead>
           <tr>
             <th>Customer</th>
@@ -49,7 +53,7 @@ const ContractsList = () => {
               <td>{c.balance}</td>
               <td>
                 <Link to={`/dashboard/contracts/edit/${c._id}`}>
-                  <button>Edit</button>
+                  <button className="edit-btn">Edit</button>
                 </Link>
               </td>
             </tr>
@@ -61,4 +65,5 @@ const ContractsList = () => {
 };
 
 export default ContractsList;
+
 

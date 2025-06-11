@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import API from '../api/api';
 import { useNavigate, useParams } from 'react-router-dom';
+import './ContractForm.css'; // Importing the CSS file for styling
 
 const initialForm = {
   customer: { name: '', email: '' },
@@ -67,9 +68,9 @@ const ContractForm = () => {
   };
 
   return (
-    <div>
+    <div className="contracts-container">
       <h3>{id ? 'Edit' : 'Add'} Contract</h3>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+      {error && <p className="error-message">{error}</p>}
       <form onSubmit={handleSubmit}>
         <fieldset>
           <legend>Customer Info</legend>
@@ -176,7 +177,7 @@ const ContractForm = () => {
           type="number"
         />
 
-        <button type="submit">{id ? 'Update' : 'Add'} Contract</button>
+        <button className="add-btn" type="submit">{id ? 'Update' : 'Add'} Contract</button>
       </form>
     </div>
   );

@@ -1,0 +1,76 @@
+/* Container styling */
+.contracts-container {
+  width: 100%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-height: 700px; /* Set a minimum height for the container */
+}
+
+/* Heading styling */
+.contracts-container h3 {
+  text-align: center;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+
+/* Content below the header */
+.contracts-table-container {
+  height: calc(100% - 80px); /* You can adjust this height to whatever works best */
+  overflow-y: auto; /* In case the content exceeds the available height */
+}
+
+/* Button Styling */
+.add-btn, .edit-btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-btn:hover, .edit-btn:hover {
+  background-color: #45a049;
+}
+
+/* Table Styling */
+.contracts-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.contracts-table th, .contracts-table td {
+  padding: 10px 15px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.contracts-table th {
+  background-color: #f1f1f1;
+  font-weight: bold;
+}
+
+.contracts-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.contracts-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+  .contracts-table th, .contracts-table td {
+    padding: 8px;
+  }
+
+  .contracts-container {
+    width: 100%;
+  }
+}

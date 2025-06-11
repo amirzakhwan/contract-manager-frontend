@@ -1,0 +1,100 @@
+/* Container styling */
+.contracts-container {
+  width: 90%;
+  margin: 75px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-height: 600px; /* Set a minimum height for the container */
+}
+
+/* Heading styling */
+.contracts-container h3 {
+  text-align: center;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  color: #007BFF; /* Blue color for title */
+}
+
+/* Statistics Section */
+.statistics {
+  margin-top: 30px;
+  background-color: #f1f1f1;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.statistics h4 {
+  font-size: 1.6em;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.statistics p {
+  font-size: 1em;
+  margin: 8px 0;
+  color: #333;
+}
+
+.statistics p span {
+  font-weight: 600;
+  color: #007BFF; /* Highlighted in blue */
+}
+
+/* Table Styling */
+.contracts-table-container {
+  height: calc(100% - 80px); /* Adjust this height if necessary */
+  overflow-y: auto; /* Scroll if content exceeds */
+}
+
+.contracts-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.contracts-table th,
+.contracts-table td {
+  padding: 10px 15px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.contracts-table th {
+  background-color: #f1f1f1;
+  font-weight: bold;
+}
+
+.contracts-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.contracts-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Status styling */
+.status {
+  font-weight: bold;
+  color: #007BFF; /* Status in blue color */
+}
+
+/* Message for no approvals found */
+td[colspan="4"] {
+  text-align: center;
+  font-style: italic;
+  color: #777;
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+  .contracts-table th, .contracts-table td {
+    padding: 8px;
+  }
+
+  .contracts-container {
+    width: 100%;
+  }
+}

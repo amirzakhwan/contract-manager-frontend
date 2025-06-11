@@ -1,0 +1,94 @@
+/* Container styling */
+.contracts-container {
+  width: 90%;
+  margin: 0px auto;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-height: 100px; /* Set a minimum height for the container */
+}
+
+/* Heading styling */
+.contracts-container h3 {
+  text-align: center;
+  font-size: 1.8em;
+  margin-bottom: 0px;
+}
+
+/* Error Message Styling */
+.error-message {
+  color: red;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Fieldset Styling */
+fieldset {
+  border: none;
+  margin-bottom: 10px;
+  padding: 0;
+}
+
+/* Legend Styling */
+legend {
+  font-weight: bold;
+  margin-bottom: 1px;
+  font-size: 14px;
+}
+
+/* Input and Select Styling */
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 1px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  font-size: 12px;
+}
+
+input[type="date"], input[type="number"], select {
+  padding-right: 15px;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #0066cc;
+}
+
+/* Button Styling */
+.add-btn {
+  padding: 12px;
+  font-size: 1rem;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-btn:hover {
+  background-color: #45a049;
+}
+
+.add-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .contracts-container {
+    width: 100%;
+  }
+
+  .contracts-container h3 {
+    font-size: 1.6em;
+  }
+
+  input, select {
+    padding: 8px;
+  }
+}

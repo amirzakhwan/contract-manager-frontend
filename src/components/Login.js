@@ -1,7 +1,8 @@
 import React, { useState, useContext } from 'react';
 import API from '../api/api';
 import { AuthContext } from '../context/AuthContext';
-import { useNavigate, Link } from 'react-router-dom';  // Import Link here
+import { useNavigate, Link } from 'react-router-dom';
+import './Login.css'; // Import CSS for styling
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -15,44 +16,43 @@ const Login = () => {
     try {
       const res = await API.post('/auth/login', { email, password });
       login(res.data.user, res.data.token);
-      navigate('/dashboard');
+      navigate('/dashboard'); // Redirect to dashboard upon successful login
     } catch (err) {
       setError(err.response?.data?.msg || 'Login failed');
     }
   };
 
   return (
-    <div>
+    <div className="login-container">
+      <h1>FLANKER</h1>
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
         <input
           type="email"
+          className="input-field"
           placeholder="Email"
           value={email}
+          onChange={(e) => setEmail(e.target.value)}
           required
-          onChange={e => setEmail(e.target.value)}
         />
         <input
           type="password"
+          className="input-field"
           placeholder="Password"
           value={password}
+          onChange={(e) => setPassword(e.target.value)}
           required
-          onChange={e => setPassword(e.target.value)}
         />
-        <button type="submit">Login</button>
-        {error && <p style={{color:'red'}}>{error}</p>}
+        <Link to="/forgot-password" className="forgot-password">Forgot Password?</Link>
+        <button type="submit" className="btn-primary">Sign In</button>
       </form>
 
-      {/* Add Register link below */}
-      <p style={{ marginTop: '10px' }}>
-        Don't have an account?{' '}
-        <Link to="/register" style={{ color: '#2563eb', textDecoration: 'underline' }}>
-          Register here
-        </Link>
-      </p>
+      <p>Don't have an account? <Link to="/register" style={{ color: '#2563eb', textDecoration: 'underline' }}>Register here</Link></p>
+      
+      {/* Show error message if there is an issue with login */}
+      {error && <p style={{ color: 'red' }}>{error}</p>}
     </div>
   );
 };
 
 export default Login;
-
